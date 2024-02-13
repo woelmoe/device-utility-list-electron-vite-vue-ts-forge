@@ -3,6 +3,12 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../resources/icon.png?asset'
 
+import HID from 'node-hid'
+
+HID.devicesAsync().then((d) => {
+  console.log(d)
+})
+
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
